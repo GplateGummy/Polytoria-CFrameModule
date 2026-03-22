@@ -147,7 +147,7 @@ function CFrame.New(...)
 end
 
 function CFrame.new(...)
-    CFrame.New(...)
+	return CFrame.New(...)
 end
 
 function CFrame.lookAt(at, lookAt, up)
