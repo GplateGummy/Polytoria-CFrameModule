@@ -324,7 +324,7 @@ function CFrame.fromEulerAnglesYXZ(rx, ry, rz)
 end
 
 function CFrame.Angles(rx, ry, rz)
-    return CFrame.fromEulerAnglesYXZ(rx, ry, rz)
+    return CFrame.fromEulerAnglesXYZ(rx, ry, rz)
 end
 
 function CFrame.fromOrientation(rx, ry, rz)
