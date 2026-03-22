@@ -1,8 +1,8 @@
--- [VERSION 1.2]
+-- [VERSION 1.21]
 -- Made by GplateGam
 
 local CFrame = {}
-CFrame.Version = "V1.2"
+CFrame.Version = "V1.21"
 
 local pi = math.pi
 local epsilon = 1e-6
