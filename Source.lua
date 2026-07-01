@@ -34,9 +34,9 @@ CFrame.Identity = newCFrame(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 local function quaternionToMatrix(qx, qy, qz, qw)
 	local x2, y2, z2 = qx + qx, qy + qy, qz + qz
-	local xx, yy, zz = qx*x2, qy*y2, qz*z2
-	local xy, xz, yz = qx*y2, qx*z2, qy*z2
-	local wx, wy, wz = qw*x2, qw*y2, qw*z2
+	local xx, yy, zz = qx * x2, qy * y2, qz * z2
+	local xy, xz, yz = qx * y2, qx * z2, qy * z2
+	local wx, wy, wz = qw * x2, qw * y2, qw * z2
 
 	return 1 - (yy + zz), xy - wz, xz + wy, xy + wz, 1 - (xx + zz), yz - wx, xz - wy, yz + wx, 1 - (xx + yy)
 end
@@ -46,28 +46,28 @@ local function matrixToQuaternion(r00, r01, r02, r10, r11, r12, r20, r21, r22)
 	local qx, qy, qz, qw
 
 	if trace > 0 then
-		local s = math.sqrt(trace + 1)*2
-		qw = 0.25*s
-		qx = (r21 - r12)/s
-		qy = (r02 - r20)/s
-		qz = (r10 - r01)/s
+		local s = math.sqrt(trace + 1) * 2
+		qw = 0.25 * s
+		qx = (r21 - r12) / s
+		qy = (r02 - r20) / s
+		qz = (r10 - r01) / s
 	elseif r00 > r11 and r00 > r22 then
-		local s = math.sqrt(1 + r00 - r11 - r22)*2
-		qw = (r21 - r12)/s
-		qx = 0.25*s
-		qy = (r01 + r10)/s
-		qz = (r02 + r20)/s
+		local s = math.sqrt(1 + r00 - r11 - r22) * 2
+		qw = (r21 - r12) / s
+		qx = 0.25 * s
+		qy = (r01 + r10) / s
+		qz = (r02 + r20) / s
 	elseif r11 > r22 then
-		local s = math.sqrt(1 + r11 - r00 - r22)*2
-		qw = (r02 - r20)/s
-		qx = (r01 + r10)/s
+		local s = math.sqrt(1 + r11 - r00 - r22) * 2
+		qw = (r02 - r20) / s
+		qx = (r01 + r10) / s
 		qy = 0.25*s
-		qz = (r12 + r21)/s
+		qz = (r12 + r21) / s
 	else
-		local s = math.sqrt(1 + r22 - r00 - r11)*2
-		qw = (r10 - r01)/s
-		qx = (r02 + r20)/s
-		qy = (r12 + r21)/s
+		local s = math.sqrt(1 + r22 - r00 - r11) * 2
+		qw = (r10 - r01) / s
+		qx = (r02 + r20) / s
+		qy = (r12 + r21) / s
 		qz = 0.25*s
 	end
 
